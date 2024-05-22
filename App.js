@@ -9,6 +9,7 @@ import DetailsScreen from './screens/DetailsScreen';
 // // import { createNavigatorFactory } from '@react-navigation/core';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './screens/LoginScreen';
 
 
 
@@ -40,6 +41,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
      <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
           </Stack.Navigator>
      </NavigationContainer>
 

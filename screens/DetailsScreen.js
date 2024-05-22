@@ -6,8 +6,8 @@ const DetailsScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.title}>Details Screen</Text>
       <Button
-        title="Go to Home"
-        onPress={() => navigation.navigate('Home', {datalaylo: 786})}
+        title="Go to Login"
+        onPress={() => navigation.navigate('Login')}
       />
     </View>
   );
