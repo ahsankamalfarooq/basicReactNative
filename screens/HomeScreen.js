@@ -3,10 +3,12 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 
 const HomeScreen = ({ navigation, route = {} }) => {
   const {datalaylo} = route.params || {};
+  const {value} = route.params || {};
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home Screen</Text>
-      <Text style = {styles.title}> Haider ALi Data = {datalaylo}</Text>
+      <Text style = {styles.title}> Haider ALi Data = {datalaylo} </Text>
+      <Text style = {styles.title}> Haider  value = {value}</Text>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Details')}
