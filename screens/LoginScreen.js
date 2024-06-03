@@ -48,10 +48,10 @@ export default function LoginScreen({navigation}) {
                 value={username}
             ></TextInput>
             <Button
-                title ='GO TO hOME'
+                title ='GO TO LIST'
                 // onPress = { () => navigation.navigate("Home")  }
                 // onPress={() => setMyFlag(myFlag+10)}
-                onPress={() => navigation.navigate('Home', {value:myFlag})}
+                onPress={() => navigation.navigate('flatlist', {value:myFlag})}
             ></Button>
         </View>
     )

@@ -10,6 +10,7 @@ import DetailsScreen from './screens/DetailsScreen';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
+import List from './screens/flatList';
 
 
 
@@ -22,12 +23,13 @@ import LoginScreen from './screens/LoginScreen';
   const onPress = () => setCount(prevCount => prevCount + 1);
 
 
-      <NavigationContainer>
-         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
-        </Stack.Navigator> 
-  //     </NavigationContainer>
+      // <NavigationContainer>
+      //    <Stack.Navigator initialRouteName="Home">
+      //     <Stack.Screen name="Home" component={HomeScreen} />
+      //     <Stack.Screen name="Details" component={DetailsScreen} />
+      //     <Stack.Screen name="flatlist" component={List} />
+      //   </Stack.Navigator> 
+      // </NavigationContainer>
     // );
   // }
 
@@ -42,6 +44,7 @@ import LoginScreen from './screens/LoginScreen';
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="flatlist" component={List} />
           </Stack.Navigator>
      </NavigationContainer>
 
@@ -116,3 +119,8 @@ const styles = StyleSheet.create({
 // }
 
 export default App;
+
+
+
+
+
