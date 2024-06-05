@@ -1,67 +1,38 @@
 // import { StatusBar } from "expo-status-bar";
 // import { StyleSheet, Text, View, Image, TextInput, Button, Alert, FlatList } from "react-native-web";
-import { StyleSheet, Text, View, TouchableOpacity,Button, Image, TextInput, text, FlatList, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity,Button, Image, TextInput, text, FlatList, Alert, SectionList } from 'react-native';
 
 import React from "react";
 import image from "../assets/favicon.png"
 
-const myDummyArray = [
-    {key:0,
-        title:     'ABC',
-        class: 'Bsc',
-        time : '8:00AM'
-    },
+// const myDummyArray = [
+//     {key:0,
+//         title:     'ABC',
+//         class: 'Bsc',
+//         time : '8:00AM'
+//     },
 
-    {key:1,
-        title: 'TEAM',
-        class: 'Bsc',
-        time : '8:00AM'
+//     {key:1,
+//         title: 'TEAM',
+//         class: 'Bsc',
+//         time : '8:00AM'
+//     }
+// ]
 
 
-    },
-    {key:2,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
 
-    },
-    {key:3,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
-
-    },
-    {key:4,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
-
-    },
-    {key:5,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
-
-    },
-    {key:6,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
-
-    },
-    {key:7,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
-
-    },
-    {key:8,
-        title: 'KHR',
-        class: 'Bsc',
-        time : '8:00AM'
-
-    },
-]
+    const mySecArray = [
+      {
+        key : 0,
+        title : "Pakistan",
+        data : [{key : 4, title : 'Karachi'},{key : 1, title : 'Lahore'},{key : 2, title : 'Islamabad'},{key : 3, title : 'Faisalabad'}]
+      },
+      {
+        key : 0,
+        title : "India",
+        data : [{key : 4, title : 'Dehli'},{key : 1, title : 'Mumbai'},{key : 3, title : 'Chenai'}]
+      }
+    ];
 
 export default function List() {
     const [text, onChangeText] = React.useState("useless text")
@@ -80,9 +51,30 @@ export default function List() {
                 
             </View>
             <View style= {styles.center}>
-                    <FlatList
+                    {/* <FlatList
                       data={myDummyArray}
                       keyExtractor={item=>item.key}
+                      renderItem={({item})=> (
+                        <View style={{backgroundColor: "grey",height: 40, marginBottom:10, flex:1, flexDirection: 'row', borderRadius: 50}}>
+                          <View style={{flex:1, alignItems: 'center', justifyContent: 'center', borderRadius: 50}}>
+                            <Text>{item.title}</Text>
+                            <Text>{item.class}</Text>
+                          </View>
+
+                        <View style={{backgroundColor: 'grey', flex:1, alignItems: 'center', justifyContent: 'center',  borderRadius: 50}}>
+                           <Text>{item.time}</Text>
+                        </View>
+                          
+                        </View>
+                    )}
+                    /> */}
+
+                    <SectionList
+                      sections={mySecArray}
+                      keyExtractor={item=>item.key}
+                      renderSectionHeader={({ section: { title } }) => (
+                        <Text style={styles.header}>{title}</Text>
+                    )}
                       renderItem={({item})=> (
                         <View style={{backgroundColor: "grey",height: 40, marginBottom:10, flex:1, flexDirection: 'row', borderRadius: 50}}>
                           <View style={{flex:1, alignItems: 'center', justifyContent: 'center', borderRadius: 50}}>
@@ -150,4 +142,11 @@ const styles = StyleSheet.create({
       backgroundColor: '#DDDDDD',
       padding: 10,
     },
+    header: {
+      fontSize: 24,
+      fontWeight: 'bold',
+      backgroundColor: '#f4f4f4',
+      padding: 5,
+  }
+  
   });
