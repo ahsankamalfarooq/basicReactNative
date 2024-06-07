@@ -1,0 +1,10 @@
+{
+    "users": [
+      { "id": 1, "name": "John Doe", "country": "USA" },
+      { "id": 2, "name": "Jane Smith", "country": "Canada" },
+      { "id": 3, "name": "Wang Wei", "country": "China" },
+      { "id": 4, "name": "Sara Connor", "country": "USA" },
+      { "id": 5, "name": "Ahmed Ali", "country": "Egypt" }
+    ]
+  }
+  
