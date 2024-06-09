@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native'
 
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, Button } from 'react-native';
 
@@ -11,6 +11,7 @@ export default function LoginScreen({navigation}) {
     const [myFlag, setMyFlag] = useState(110)
     const [username, onChangeUsername] = useState(' ');
     const [password, onChangePassword] = useState(' ');
+    const [fonts, setFonts] = useState(5)
 
     // const navigation = useNavigation();
     // const {data, signup} = PostAPIHooks();
@@ -36,11 +37,20 @@ export default function LoginScreen({navigation}) {
         console.log(myFlag);
     } ;
 
+    useEffect(() => {
+        // console.log("Return is called");
+        const unsubscribe = navigation.addListener('focus', () => {
+            setFonts(fonts+50);
+            console.log("Navigation useEffect is called = ");
+        });
+        return unsubscribe
+    }, [navigation]);
+
     // var myFlag = 100;
 
     return (
         <View style= {styles.container}>
-            <Text>Login Screen! My Flag is = {myFlag}</Text>
+            <Text style={{fontSize: fonts}}>Login Screen! My Flag is = {myFlag}</Text>
 
             <TextInput
                 style = {styles.input}
@@ -48,10 +58,10 @@ export default function LoginScreen({navigation}) {
                 value={username}
             ></TextInput>
             <Button
-                title ='GO TO LIST'
+                title ='GO TO Effect'
                 // onPress = { () => navigation.navigate("Home")  }
                 // onPress={() => setMyFlag(myFlag+10)}
-                onPress={() => navigation.navigate('flatlist', {value:myFlag})}
+                onPress={() => navigation.navigate('effect', {value:myFlag})}
             ></Button>
         </View>
     )

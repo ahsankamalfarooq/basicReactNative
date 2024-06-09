@@ -11,6 +11,7 @@ import DetailsScreen from './screens/DetailsScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
 import List from './screens/flatList';
+import newEffect from './screens/useEffect.js';
 
 
 
@@ -41,10 +42,11 @@ import List from './screens/flatList';
 
     <NavigationContainer>
      <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+          {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
           <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="flatlist" component={List} />
+          {/* <Stack.Screen name="flatlist" component={List} /> */}
+          <Stack.Screen name="effect" component={newEffect} />
           </Stack.Navigator>
      </NavigationContainer>
 
