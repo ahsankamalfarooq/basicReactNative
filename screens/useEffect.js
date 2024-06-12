@@ -91,9 +91,9 @@ const NewEffect = ({ navigation }) => {
   const [number, setNumber] = useState(0);
   const [flag, setFlag] = useState(0);
 
-  useEffect(() => {
-    console.log("Simple UseEffect");
-  });
+  // useEffect(() => {
+  //   console.log("Simple UseEffect");
+  // });
 
   useEffect(() => {
     console.log("Simple UseEffect [ [] ]");
@@ -137,8 +137,12 @@ const NewEffect = ({ navigation }) => {
         onPress={() => setNumber(number + 1)}
       />
       <Button
-        title='Update State For Flag'
-        onPress={() => setFlag(flag + 1)}
+        title='Update State For All Globe'
+        onPress={() => global.setting={
+          fs:10,
+          fc: 'brown',
+          bc: 'black'
+        }}
       />
     </View>
   );

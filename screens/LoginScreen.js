@@ -38,10 +38,19 @@ export default function LoginScreen({navigation}) {
     } ;
 
     useEffect(() => {
+        global.setting={
+            fs: 50,
+            fc: 'cyan',
+            bc: 'pink'
+        }
+    })
+
+
+    useEffect(() => {
         // console.log("Return is called");
         const unsubscribe = navigation.addListener('focus', () => {
-            setFonts(fonts+50);
-            console.log("Navigation useEffect is called = ");
+            setFonts(global.setting.fs);
+            console.log("Navigation useEffect is called = ", global.setting);
         });
         return unsubscribe
     }, [navigation]);

@@ -78,24 +78,24 @@
 //     //              />
                 
 //     //         </View>
-//     //         <View style= {styles.center}>
-//     //                 {/* <FlatList
-//     //                   data={myDummyArray}
-//     //                   keyExtractor={item=>item.key}
-//     //                   renderItem={({item})=> (
-//     //                     <View style={{backgroundColor: "grey",height: 40, marginBottom:10, flex:1, flexDirection: 'row', borderRadius: 50}}>
-//     //                       <View style={{flex:1, alignItems: 'center', justifyContent: 'center', borderRadius: 50}}>
-//     //                         <Text>{item.title}</Text>
-//     //                         <Text>{item.class}</Text>
-//     //                       </View>
+// //     //         <View style= {styles.center}>
+//                      <FlatList
+//                       data={myDummyArray}
+//                       keyExtractor={item=>item.key}
+//                       renderItem={({item})=> (
+//                         <View style={{backgroundColor: "grey",height: 40, marginBottom:10, flex:1, flexDirection: 'row', borderRadius: 50}}>
+//                           <View style={{flex:1, alignItems: 'center', justifyContent: 'center', borderRadius: 50}}>
+//                             <Text>{item.title}</Text>
+//                             <Text>{item.class}</Text>
+//                           </View>
 
-//     //                     <View style={{backgroundColor: 'grey', flex:1, alignItems: 'center', justifyContent: 'center',  borderRadius: 50}}>
-//     //                        <Text>{item.time}</Text>
-//     //                     </View>
+//                         <View style={{backgroundColor: 'grey', flex:1, alignItems: 'center', justifyContent: 'center',  borderRadius: 50}}>
+//                            <Text>{item.time}</Text>
+//                         </View>
                           
-//     //                     </View>
-//     //                 )}
-//     //                 /> */}
+//                         </View>
+//                     )}
+//                     /> 
 
 
 
