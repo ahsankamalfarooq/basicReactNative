@@ -43,11 +43,11 @@ import HomeSweet from './screens/Home.js';
 
     <NavigationContainer>
      <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Details" component={DetailsScreen} />
           <Stack.Screen name="HomeSweet" component={HomeSweet} />
           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}} />
           <Stack.Screen name="effect" component={newEffect} />
-          <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="flatlist" component={List} />
           </Stack.Navigator>
      </NavigationContainer>

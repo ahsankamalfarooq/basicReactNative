@@ -65,19 +65,19 @@
       
 //       console.log(data)
 
-//     // return(
-//     //     <View style={styles.container}>
-//     //         <View style={styles.top}>
-//     //             <Image 
-//     //                 style={styles.tinyLogo}
-//     //                 source={{
-//     //                     // source = {require('.')},
-//     //                     // source={require('@expo/snack-static/react-native-logo.png')}
-//     //                     uri: 'https://reactnative.dev/img/tiny_logo.png',
-//     //                 }}
-//     //              />
+    // // return(
+    //     <View style={styles.container}>
+    //         <View style={styles.top}>
+    //             <Image 
+    //                 style={styles.tinyLogo}
+    //                 source={{
+    //                     // source = {require('.')},
+    //                     // source={require('@expo/snack-static/react-native-logo.png')}
+    //                     uri: 'https://reactnative.dev/img/tiny_logo.png',
+    //                 }}
+    //              />
                 
-//     //         </View>
+    //         </View>
 // //     //         <View style= {styles.center}>
 //                      <FlatList
 //                       data={myDummyArray}
