@@ -13,6 +13,7 @@ import LoginScreen from './screens/LoginScreen';
 import List from './screens/flatList';
 import newEffect from './screens/useEffect.js';
 import HomeSweet from './screens/Home.js';
+import SignUp from './screens/signUp.js';
 
 
 
@@ -43,8 +44,9 @@ import HomeSweet from './screens/Home.js';
 
     <NavigationContainer>
      <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="signUp" component={SignUp} />
           <Stack.Screen name="HomeSweet" component={HomeSweet} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
           <Stack.Screen name="Login" component={LoginScreen} options={{headerShown:false}} />
           <Stack.Screen name="effect" component={newEffect} />

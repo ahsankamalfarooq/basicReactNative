@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Button, Image, FlatList } from 'react-native';
+import NewCustomHook from "../NewCustomHook";
 
 export default function HomeSweet() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+
+      const {data, myGetAPIHook} = NewCustomHook();
 
   useEffect(() => {
     console.log("UseEffect . . . .");
-    axios.get('https://reactnative.dev/movies.json')
-      .then((response) => {
-        console.log("is this a Movie ???");
-        console.log(response.data.movies);
-        setData(response.data.movies);
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
+    myGetAPIHook('https://reactnative.dev/movies.json')
+
+  //   axios.get('https://reactnative.dev/movies.json')
+  //     .then((response) => {
+  //       console.log("is this a Movie ???");
+  //       console.log(response.data.movies);
+  //       setData(response.data.movies);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data: ", error);
+  //     });
   }, []);
 
   return (
