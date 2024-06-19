@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity,Button, Image, TextInput, text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import React, {useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 // import { createNavigatorFactory } from '@react-navigation/native';
@@ -14,7 +14,7 @@ import List from './screens/flatList';
 import newEffect from './screens/useEffect.js';
 import HomeSweet from './screens/Home.js';
 import SignUp from './screens/signUp.js';
-
+import AppContext from './Context.js'
 
 
  function App() {
@@ -23,27 +23,16 @@ import SignUp from './screens/signUp.js';
   // const Stack = createStackNavigator();
   const [text, onChangeText] = React.useState('Useless Text');
   const [count, setCount] = useState(0);
-  const onPress = () => setCount(prevCount => prevCount + 1);
+  // const [users, setUsers] = useState([{key:0, title:'Ali'}])
+  const [users, setUsers] = useState([{ key: 0, title: 'Ali' }]);
+  // console.log(users[0].title)
 
-
-      // <NavigationContainer>
-      //    <Stack.Navigator initialRouteName="Home">
-      //     <Stack.Screen name="Home" component={HomeScreen} />
-      //     <Stack.Screen name="Details" component={DetailsScreen} />
-      //     <Stack.Screen name="flatlist" component={List} />
-      //   </Stack.Navigator> 
-      // </NavigationContainer>
-    // );
-  // }
-
-  // const youPressedMe = () => {
-  //   alert('Dev Team~KHR')
-  // }
 
   return (
 
     <NavigationContainer>
-     <Stack.Navigator initialRouteName="Home">
+        <AppContext.Provider value={{users}}>
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="signUp" component={SignUp} />
           <Stack.Screen name="HomeSweet" component={HomeSweet} />
           <Stack.Screen name="Details" component={DetailsScreen} />
@@ -52,6 +41,7 @@ import SignUp from './screens/signUp.js';
           <Stack.Screen name="effect" component={newEffect} />
           <Stack.Screen name="flatlist" component={List} />
           </Stack.Navigator>
+        </AppContext.Provider>s
      </NavigationContainer>
 
    

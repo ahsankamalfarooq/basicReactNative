@@ -65,6 +65,9 @@
 import React, { useState, useRef } from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Checkbox from 'expo-checkbox';
+import { useContext } from "react";
+import AppContext from '../Context'
+
 
 const SignUp = ({ navigation }) => {
     const [isChecked, setChecked] = useState(false);
@@ -74,6 +77,10 @@ const SignUp = ({ navigation }) => {
     const refInputUsername = useRef(null);
     const refInputEmail = useRef(null);
     const refInputPassword = useRef(null);
+    const {users} = useContext(AppContext);
+    // console.log({users})
+    console.log(users[0].title)
+
 
     const signUpBtnPressed = () => {
         console.log('signup Btn Pressed');
@@ -85,7 +92,7 @@ const SignUp = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Sign Up</Text>
+            <Text style={styles.title}>Sign Up @ {users[0].title}</Text>
 
             <TextInput
                 cursorColor={"darkgrey"}
@@ -123,7 +130,7 @@ const SignUp = ({ navigation }) => {
             </View>
 
             <TouchableOpacity style={styles.button} onPress={signUpBtnPressed}>
-                <Text style={styles.buttonText}>Sign Up</Text>
+                <Text style={styles.buttonText}>Sign Up </Text>
             </TouchableOpacity>
         </View>
     );
