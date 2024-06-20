@@ -296,7 +296,7 @@ export default function Login() {
       </TouchableOpacity>
       <Button
         title='Go to Home'
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('signUp')}
       />
     </View>
   );
