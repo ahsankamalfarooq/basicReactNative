@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Button } from 'react-native';
 import PostAPIHooks from '../APIHooks/PostAPIHooks';
+import { auth } from './firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 
 export default function Login() {
   const [username, onChangeUsername] = useState('');

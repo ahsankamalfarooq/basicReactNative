@@ -3,8 +3,26 @@ import axios from "axios";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Button, Image, FlatList } from 'react-native';
 import NewCustomHook from "../NewCustomHook";
 
+import { useQuery, gql } from "@apollo/client";
+
+const COUNTRY_QUERY = gql`
+    query CountryQuery{
+      countries{
+          name
+      }
+    }
+`
+
+
 export default function HomeSweet() {
   // const [data, setData] = useState([]);
+  const {meradata, loading}  = useQuery(COUNTRY_QUERY)
+
+  useEffect( ()=> {
+    console.log('GraphQL ===', meradata)
+
+
+  })
 
       const {data, myGetAPIHook} = NewCustomHook();
 
@@ -52,6 +70,14 @@ export default function HomeSweet() {
               </View>
             </View>
           )}
+        />
+        <FlatList
+          data={meradata.countries}
+          renderItem={({item})=>
+              <View>
+                  <Text>{item.name}</Text>
+              </View>
+          }
         />
       </View>
     </View>

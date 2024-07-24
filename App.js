@@ -16,6 +16,8 @@ import HomeSweet from './screens/Home.js';
 import SignUp from './screens/signUp.js';
 import AppContext from './Context.js'
 
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 
  function App() {
   
@@ -27,9 +29,15 @@ import AppContext from './Context.js'
   const [users, setUsers] = useState([{ key: 0, title: 'Ali' }]);
   // console.log(users[0].title)
 
+  const client = new ApolloClient({
+      uri : '',
+      cache : new InMemoryCache()
+  })
+
+
 
   return (
-
+    <ApolloProvider client={client}>
     <NavigationContainer>
         <AppContext.Provider value={{users}}>
         <Stack.Navigator initialRouteName="Home">
@@ -43,7 +51,7 @@ import AppContext from './Context.js'
           </Stack.Navigator>
         </AppContext.Provider>s
      </NavigationContainer>
-
+     </ApolloProvider>
    
   );
 }
